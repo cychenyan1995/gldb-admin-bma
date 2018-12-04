@@ -1,0 +1,179 @@
+package com.glsx.oms.bigdata.admin.bma.salesTask.model;
+
+import java.util.Date;
+
+public class SalesTask {
+    private Integer id;
+
+    private String month;
+
+    private String area;
+
+    private String regionalManagerLeader;
+
+    private String regionalManager;
+
+    private String bizType;
+
+    private String spName;
+
+    private Integer tasknumDvd;
+
+    private Integer tasknumGps;
+
+    private Integer tasknumYunjing;
+
+    private Integer tasknumDidihuService;
+
+    private Integer tasknumWirelessCharge;
+
+    private Integer tasknumRearview;
+
+    private Integer tasknumFunctionRearview;
+
+    private Date createTime;
+
+    private Date updateTime;
+    
+    /**
+     * 表格类型
+     */
+    private String excelType;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getMonth() {
+        return month;
+    }
+
+    public void setMonth(String month) {
+        this.month = month;
+    }
+
+    public String getArea() {
+        return area;
+    }
+
+    public void setArea(String area) {
+        this.area = area;
+    }
+
+    public String getRegionalManagerLeader() {
+        return regionalManagerLeader;
+    }
+
+    public void setRegionalManagerLeader(String regionalManagerLeader) {
+        this.regionalManagerLeader = regionalManagerLeader;
+    }
+
+    public String getRegionalManager() {
+        return regionalManager;
+    }
+
+    public void setRegionalManager(String regionalManager) {
+        this.regionalManager = regionalManager;
+    }
+
+    public String getBizType() {
+        return bizType;
+    }
+
+    public void setBizType(String bizType) {
+        this.bizType = bizType;
+    }
+
+    public String getSpName() {
+        return spName;
+    }
+
+    public void setSpName(String spName) {
+        this.spName = spName;
+    }
+
+    public Integer getTasknumDvd() {
+        return tasknumDvd;
+    }
+
+    public void setTasknumDvd(Integer tasknumDvd) {
+        this.tasknumDvd = tasknumDvd;
+    }
+
+    public Integer getTasknumGps() {
+        return tasknumGps;
+    }
+
+    public void setTasknumGps(Integer tasknumGps) {
+        this.tasknumGps = tasknumGps;
+    }
+
+    public Integer getTasknumYunjing() {
+        return tasknumYunjing;
+    }
+
+    public void setTasknumYunjing(Integer tasknumYunjing) {
+        this.tasknumYunjing = tasknumYunjing;
+    }
+
+    public Integer getTasknumDidihuService() {
+        return tasknumDidihuService;
+    }
+
+    public void setTasknumDidihuService(Integer tasknumDidihuService) {
+        this.tasknumDidihuService = tasknumDidihuService;
+    }
+
+    public Integer getTasknumWirelessCharge() {
+        return tasknumWirelessCharge;
+    }
+
+    public void setTasknumWirelessCharge(Integer tasknumWirelessCharge) {
+        this.tasknumWirelessCharge = tasknumWirelessCharge;
+    }
+
+    public Integer getTasknumRearview() {
+        return tasknumRearview;
+    }
+
+    public void setTasknumRearview(Integer tasknumRearview) {
+        this.tasknumRearview = tasknumRearview;
+    }
+
+    public Integer getTasknumFunctionRearview() {
+        return tasknumFunctionRearview;
+    }
+
+    public void setTasknumFunctionRearview(Integer tasknumFunctionRearview) {
+        this.tasknumFunctionRearview = tasknumFunctionRearview;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Date getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
+    }
+
+	public String getExcelType() {
+		return excelType;
+	}
+
+	public void setExcelType(String excelType) {
+		this.excelType = excelType;
+	}
+    
+}

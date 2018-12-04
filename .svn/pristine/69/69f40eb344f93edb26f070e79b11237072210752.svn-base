@@ -1,0 +1,556 @@
+package com.glsx.oms.bigdata.admin.bma.salesHistory.model;
+
+import java.util.Date;
+
+import org.oreframework.commons.office.poi.zslin.utils.ExcelResources;
+
+import com.glsx.oms.bigdata.admin.bma.common.BasePojo;
+
+public class SalesHistory extends BasePojo<SalesHistory>{
+    private Integer id;
+
+    private String month;
+
+    private String monthRegion;
+
+    private String area;
+
+    private String bizType;
+
+    private String spCode;
+
+    private String spName;
+
+    private String shopCode;
+
+    private String shopName;
+
+    private Integer salesCar;
+
+    private Integer salesDvd;
+
+    private Integer salesGps;
+
+    private Integer salesGlDvd;
+
+    private Integer salesGlGps;
+
+    private Integer salesYunjing;
+
+    private Integer salesDidihuService;
+
+    private Integer salesWirelessCharge;
+
+    private Integer salesRearview;
+
+    private Integer salesFunctionRearview;
+
+    private Integer salesGlTotal;
+
+    private Integer salesDvdInterLargescreen;
+
+    private Integer salesDvdInterOriginalscreen;
+
+    private Integer salesScreenChange;
+
+    private Integer salesReflectionUpgrade;
+
+    private Integer salesBigScreenPromotion;
+
+    private Float totalChainRatio;
+
+    private Float glDvdChainRatio;
+
+    private Float glGpsChainRatio;
+
+    private Float yunjingChainRatio;
+
+    private Float didihuServiceChainRatio;
+
+    private Float wirelessChargeChainRatio;
+
+    private Float rearviewChainRatio;
+
+    private Float funRearviewChainRatio;
+
+    private Float ratioInstallGlDvd;
+
+    private Float ratioGlDvd;
+
+    private Float ratioGlGps;
+
+    private Float costDvd;
+
+    private Float costGps;
+
+    private Float costYunjing;
+
+    private Float costDidihuService;
+
+    private Float costWirelessCharge;
+
+    private Float costRearview;
+
+    private Float costFunctionRearview;
+
+    private Float costTotal;
+
+    private Float costDvdInterLargescreen;
+
+    private Float costDvdInterOriginalscreen;
+
+    private Float costScreenChange;
+
+    private Float costReflectionUpgrade;
+
+    private Float costBigScreenPromotion;
+
+    private Integer totalDeliver;
+
+    private Integer totalSales;
+
+    private Integer totalInventory;
+
+    private Date createTime;
+
+    private Date updateTime;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getMonth() {
+        return month;
+    }
+
+    public void setMonth(String month) {
+        this.month = month;
+    }
+
+    public String getMonthRegion() {
+        return monthRegion;
+    }
+
+    public void setMonthRegion(String monthRegion) {
+        this.monthRegion = monthRegion;
+    }
+
+    @ExcelResources(title="区域",order=1)
+    public String getArea() {
+        return area;
+    }
+
+    public void setArea(String area) {
+        this.area = area;
+    }
+
+    @ExcelResources(title="业务类型",order=2)
+    public String getBizType() {
+        return bizType;
+    }
+
+    public void setBizType(String bizType) {
+        this.bizType = bizType;
+    }
+
+    public String getSpCode() {
+        return spCode;
+    }
+
+    public void setSpCode(String spCode) {
+        this.spCode = spCode;
+    }
+
+    @ExcelResources(title="服务商",order=3)
+    public String getSpName() {
+        return spName;
+    }
+
+    public void setSpName(String spName) {
+        this.spName = spName;
+    }
+
+    public String getShopCode() {
+        return shopCode;
+    }
+
+    public void setShopCode(String shopCode) {
+        this.shopCode = shopCode;
+    }
+
+    public String getShopName() {
+        return shopName;
+    }
+
+    public void setShopName(String shopName) {
+        this.shopName = shopName;
+    }
+
+    public Integer getSalesCar() {
+        return salesCar;
+    }
+
+    public void setSalesCar(Integer salesCar) {
+        this.salesCar = salesCar;
+    }
+
+    public Integer getSalesDvd() {
+        return salesDvd;
+    }
+
+    public void setSalesDvd(Integer salesDvd) {
+        this.salesDvd = salesDvd;
+    }
+
+    public Integer getSalesGps() {
+        return salesGps;
+    }
+
+    public void setSalesGps(Integer salesGps) {
+        this.salesGps = salesGps;
+    }
+
+    @ExcelResources(title="广联DVD销售数",order=4)
+    public Integer getSalesGlDvd() {
+        return salesGlDvd;
+    }
+
+    public void setSalesGlDvd(Integer salesGlDvd) {
+        this.salesGlDvd = salesGlDvd;
+    }
+
+    @ExcelResources(title="广联GPS销售数",order=5)
+    public Integer getSalesGlGps() {
+        return salesGlGps;
+    }
+
+    public void setSalesGlGps(Integer salesGlGps) {
+        this.salesGlGps = salesGlGps;
+    }
+
+    @ExcelResources(title="嘀嘀虎智能云镜销售数",order=6)
+    public Integer getSalesYunjing() {
+        return salesYunjing;
+    }
+
+    public void setSalesYunjing(Integer salesYunjing) {
+        this.salesYunjing = salesYunjing;
+    }
+
+    @ExcelResources(title="嘀嘀虎车联网服务激活卡-1年版销售数",order=7)
+    public Integer getSalesDidihuService() {
+        return salesDidihuService;
+    }
+
+    public void setSalesDidihuService(Integer salesDidihuService) {
+        this.salesDidihuService = salesDidihuService;
+    }
+
+    public Integer getSalesWirelessCharge() {
+        return salesWirelessCharge;
+    }
+
+    public void setSalesWirelessCharge(Integer salesWirelessCharge) {
+        this.salesWirelessCharge = salesWirelessCharge;
+    }
+
+    public Integer getSalesRearview() {
+        return salesRearview;
+    }
+
+    public void setSalesRearview(Integer salesRearview) {
+        this.salesRearview = salesRearview;
+    }
+
+    public Integer getSalesFunctionRearview() {
+        return salesFunctionRearview;
+    }
+
+    public void setSalesFunctionRearview(Integer salesFunctionRearview) {
+        this.salesFunctionRearview = salesFunctionRearview;
+    }
+
+    public Integer getSalesGlTotal() {
+        return salesGlTotal;
+    }
+
+    public void setSalesGlTotal(Integer salesGlTotal) {
+        this.salesGlTotal = salesGlTotal;
+    }
+
+    public Integer getSalesDvdInterLargescreen() {
+        return salesDvdInterLargescreen;
+    }
+
+    public void setSalesDvdInterLargescreen(Integer salesDvdInterLargescreen) {
+        this.salesDvdInterLargescreen = salesDvdInterLargescreen;
+    }
+
+    public Integer getSalesDvdInterOriginalscreen() {
+        return salesDvdInterOriginalscreen;
+    }
+
+    public void setSalesDvdInterOriginalscreen(Integer salesDvdInterOriginalscreen) {
+        this.salesDvdInterOriginalscreen = salesDvdInterOriginalscreen;
+    }
+
+    public Integer getSalesScreenChange() {
+        return salesScreenChange;
+    }
+
+    public void setSalesScreenChange(Integer salesScreenChange) {
+        this.salesScreenChange = salesScreenChange;
+    }
+
+    public Integer getSalesReflectionUpgrade() {
+        return salesReflectionUpgrade;
+    }
+
+    public void setSalesReflectionUpgrade(Integer salesReflectionUpgrade) {
+        this.salesReflectionUpgrade = salesReflectionUpgrade;
+    }
+
+    public Integer getSalesBigScreenPromotion() {
+        return salesBigScreenPromotion;
+    }
+
+    public void setSalesBigScreenPromotion(Integer salesBigScreenPromotion) {
+        this.salesBigScreenPromotion = salesBigScreenPromotion;
+    }
+
+    public Float getTotalChainRatio() {
+        return totalChainRatio;
+    }
+
+    public void setTotalChainRatio(Float totalChainRatio) {
+        this.totalChainRatio = totalChainRatio;
+    }
+
+    public Float getGlDvdChainRatio() {
+        return glDvdChainRatio;
+    }
+
+    public void setGlDvdChainRatio(Float glDvdChainRatio) {
+        this.glDvdChainRatio = glDvdChainRatio;
+    }
+
+    public Float getGlGpsChainRatio() {
+        return glGpsChainRatio;
+    }
+
+    public void setGlGpsChainRatio(Float glGpsChainRatio) {
+        this.glGpsChainRatio = glGpsChainRatio;
+    }
+
+    public Float getYunjingChainRatio() {
+        return yunjingChainRatio;
+    }
+
+    public void setYunjingChainRatio(Float yunjingChainRatio) {
+        this.yunjingChainRatio = yunjingChainRatio;
+    }
+
+    public Float getDidihuServiceChainRatio() {
+        return didihuServiceChainRatio;
+    }
+
+    public void setDidihuServiceChainRatio(Float didihuServiceChainRatio) {
+        this.didihuServiceChainRatio = didihuServiceChainRatio;
+    }
+
+    public Float getWirelessChargeChainRatio() {
+        return wirelessChargeChainRatio;
+    }
+
+    public void setWirelessChargeChainRatio(Float wirelessChargeChainRatio) {
+        this.wirelessChargeChainRatio = wirelessChargeChainRatio;
+    }
+
+    public Float getRearviewChainRatio() {
+        return rearviewChainRatio;
+    }
+
+    public void setRearviewChainRatio(Float rearviewChainRatio) {
+        this.rearviewChainRatio = rearviewChainRatio;
+    }
+
+    public Float getFunRearviewChainRatio() {
+        return funRearviewChainRatio;
+    }
+
+    public void setFunRearviewChainRatio(Float funRearviewChainRatio) {
+        this.funRearviewChainRatio = funRearviewChainRatio;
+    }
+
+    public Float getRatioInstallGlDvd() {
+        return ratioInstallGlDvd;
+    }
+
+    public void setRatioInstallGlDvd(Float ratioInstallGlDvd) {
+        this.ratioInstallGlDvd = ratioInstallGlDvd;
+    }
+
+    public Float getRatioGlDvd() {
+        return ratioGlDvd;
+    }
+
+    public void setRatioGlDvd(Float ratioGlDvd) {
+        this.ratioGlDvd = ratioGlDvd;
+    }
+
+    public Float getRatioGlGps() {
+        return ratioGlGps;
+    }
+
+    public void setRatioGlGps(Float ratioGlGps) {
+        this.ratioGlGps = ratioGlGps;
+    }
+
+    public Float getCostDvd() {
+        return costDvd;
+    }
+
+    public void setCostDvd(Float costDvd) {
+        this.costDvd = costDvd;
+    }
+
+    public Float getCostGps() {
+        return costGps;
+    }
+
+    public void setCostGps(Float costGps) {
+        this.costGps = costGps;
+    }
+
+    public Float getCostYunjing() {
+        return costYunjing;
+    }
+
+    public void setCostYunjing(Float costYunjing) {
+        this.costYunjing = costYunjing;
+    }
+
+    public Float getCostDidihuService() {
+        return costDidihuService;
+    }
+
+    public void setCostDidihuService(Float costDidihuService) {
+        this.costDidihuService = costDidihuService;
+    }
+
+    public Float getCostWirelessCharge() {
+        return costWirelessCharge;
+    }
+
+    public void setCostWirelessCharge(Float costWirelessCharge) {
+        this.costWirelessCharge = costWirelessCharge;
+    }
+
+    public Float getCostRearview() {
+        return costRearview;
+    }
+
+    public void setCostRearview(Float costRearview) {
+        this.costRearview = costRearview;
+    }
+
+    public Float getCostFunctionRearview() {
+        return costFunctionRearview;
+    }
+
+    public void setCostFunctionRearview(Float costFunctionRearview) {
+        this.costFunctionRearview = costFunctionRearview;
+    }
+
+    public Float getCostTotal() {
+        return costTotal;
+    }
+
+    public void setCostTotal(Float costTotal) {
+        this.costTotal = costTotal;
+    }
+
+    public Float getCostDvdInterLargescreen() {
+        return costDvdInterLargescreen;
+    }
+
+    public void setCostDvdInterLargescreen(Float costDvdInterLargescreen) {
+        this.costDvdInterLargescreen = costDvdInterLargescreen;
+    }
+
+    public Float getCostDvdInterOriginalscreen() {
+        return costDvdInterOriginalscreen;
+    }
+
+    public void setCostDvdInterOriginalscreen(Float costDvdInterOriginalscreen) {
+        this.costDvdInterOriginalscreen = costDvdInterOriginalscreen;
+    }
+
+    public Float getCostScreenChange() {
+        return costScreenChange;
+    }
+
+    public void setCostScreenChange(Float costScreenChange) {
+        this.costScreenChange = costScreenChange;
+    }
+
+    public Float getCostReflectionUpgrade() {
+        return costReflectionUpgrade;
+    }
+
+    public void setCostReflectionUpgrade(Float costReflectionUpgrade) {
+        this.costReflectionUpgrade = costReflectionUpgrade;
+    }
+
+    public Float getCostBigScreenPromotion() {
+        return costBigScreenPromotion;
+    }
+
+    public void setCostBigScreenPromotion(Float costBigScreenPromotion) {
+        this.costBigScreenPromotion = costBigScreenPromotion;
+    }
+
+    public Integer getTotalDeliver() {
+        return totalDeliver;
+    }
+
+    public void setTotalDeliver(Integer totalDeliver) {
+        this.totalDeliver = totalDeliver;
+    }
+
+    public Integer getTotalSales() {
+        return totalSales;
+    }
+
+    public void setTotalSales(Integer totalSales) {
+        this.totalSales = totalSales;
+    }
+
+    public Integer getTotalInventory() {
+        return totalInventory;
+    }
+
+    public void setTotalInventory(Integer totalInventory) {
+        this.totalInventory = totalInventory;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Date getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
+    }
+}

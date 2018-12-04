@@ -1,0 +1,53 @@
+package com.glsx.oms.bigdata.admin.bma.salesTask.service;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+
+import javax.annotation.Resource;
+
+import org.oreframework.web.ui.Pagination;
+import org.springframework.stereotype.Service;
+
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageInfo;
+import com.glsx.oms.bigdata.admin.bma.common.BaseService;
+import com.glsx.oms.bigdata.admin.bma.salesTask.mapper.SalesTaskMapper;
+import com.glsx.oms.bigdata.admin.bma.salesTask.model.SalesTask;
+
+
+@Service
+public class SalesService extends BaseService<SalesTask>{
+	@Resource
+	private SalesTaskMapper salesTaskMapper;
+	
+
+	private SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM");
+	
+	public PageInfo<SalesTask> getSalesTaskList(Pagination pagination){
+		PageInfo<SalesTask> pageInfo = setPageInfo(pagination);
+		Page<SalesTask> page = getPage(pageInfo);
+        Date date = new Date();
+        String month = ft.format(date);
+        
+		List<SalesTask> SalesTaskList = salesTaskMapper.getSalesTaskList(month);
+		setPageInfo(pageInfo, page, SalesTaskList);
+		return pageInfo;
+	}
+	
+	public int updateSalesTask(SalesTask salesTask){
+		Date date = new Date();
+        String month = ft.format(date);
+        salesTask.setMonth(month);
+		return salesTaskMapper.updateSalesTask(salesTask);
+	}
+	
+	public void insertAllSalesTask(List<Object> salesTaskList){
+		salesTaskMapper.insertAllSalesTask(salesTaskList);
+    }
+	
+	public String getCodeBySpName(String spName){
+		return salesTaskMapper.getCodeBySpName(spName);
+	}
+
+}

@@ -1,0 +1,25 @@
+package com.glsx.oms.bigdata.admin.bma.salesTask.service;
+
+import java.util.List;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+
+import com.glsx.oms.bigdata.admin.bma.salesTask.mapper.SalesTaskMapper;
+
+
+@Service
+public class SalesService {
+	@Resource
+	private SalesTaskMapper salesTaskMapper;
+	
+	/*public void insertAllSalesTask(List<SalesTask> salesTaskList){
+		salesTaskMapper.insertAllSalesTask(salesTaskList);
+    }*/
+	
+	public void insertAllSalesTask(List<Object> salesTaskList){
+		salesTaskMapper.insertAllSalesTask(salesTaskList);
+    }
+
+}

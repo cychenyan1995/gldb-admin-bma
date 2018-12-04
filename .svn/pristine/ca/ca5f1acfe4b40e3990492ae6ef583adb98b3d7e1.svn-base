@@ -1,0 +1,22 @@
+{
+  "vendors.css": "/gldb-admin-bma/vendors.chunk.css",
+  "vendors.js": "/gldb-admin-bma/vendors.async.js",
+  "umi.css": "/gldb-admin-bma/umi.css",
+  "umi.js": "/gldb-admin-bma/umi.js",
+  "2.chunk.css": "/gldb-admin-bma/2.chunk.css",
+  "2.async.js": "/gldb-admin-bma/2.async.js",
+  "3.async.js": "/gldb-admin-bma/3.async.js",
+  "4.async.js": "/gldb-admin-bma/4.async.js",
+  "5.async.js": "/gldb-admin-bma/5.async.js",
+  "6.async.js": "/gldb-admin-bma/6.async.js",
+  "7.async.js": "/gldb-admin-bma/7.async.js",
+  "8.async.js": "/gldb-admin-bma/8.async.js",
+  "9.async.js": "/gldb-admin-bma/9.async.js",
+  "10.chunk.css": "/gldb-admin-bma/10.chunk.css",
+  "10.async.js": "/gldb-admin-bma/10.async.js",
+  "11.async.js": "/gldb-admin-bma/11.async.js",
+  "static/logo.png": "/gldb-admin-bma/static/logo.318da761.png",
+  "favicon.png": "/gldb-admin-bma/favicon.png",
+  "color.less": "/gldb-admin-bma/color.less",
+  "index.html": "/gldb-admin-bma/index.html"
+}

@@ -1,0 +1,26 @@
+package com.glsx.oms.bigdata.admin.bma.salesTask.mapper;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
+
+import com.glsx.oms.bigdata.admin.bma.salesTask.model.SalesTask;
+
+@Mapper
+public interface SalesTaskMapper {
+    int deleteByPrimaryKey(Integer id);
+
+    int insert(SalesTask record);
+
+    int insertSelective(SalesTask record);
+
+    SalesTask selectByPrimaryKey(Integer id);
+
+    int updateByPrimaryKeySelective(SalesTask record);
+
+    int updateByPrimaryKey(SalesTask record);
+    
+    /*public int insertAllSalesTask(List<SalesTask> salesTaskList);*/
+    
+    public int insertAllSalesTask(List<Object> salesTaskList);
+}

@@ -1,0 +1,25 @@
+import React, { Component } from 'react';
+import { Card, Table } from 'antd';
+import TableCustom from '@/components/Table/Table';
+
+class SendMessage extends Component {
+
+  render() {
+    const columns = [
+      { title: '任务责任人', width: 150, dataIndex: 'manager' },
+      { title: '总任务数', width: 150, dataIndex: 'totalTaskNum' },
+      { title: '总销售数', width: 150, dataIndex: 'totalSaleNum' },
+      { title: '任务完成率', width: 150, dataIndex: 'totalRatio' },
+    ];
+    return (
+        <Card>
+        <TableCustom 
+         columns={columns}
+         scroll={{ x: 600,y: 600 }}
+      />
+      </Card>
+    )
+  }
+}
+
+export default SendMessage

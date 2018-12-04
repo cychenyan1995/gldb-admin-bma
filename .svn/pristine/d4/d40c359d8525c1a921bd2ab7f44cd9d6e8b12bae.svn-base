@@ -1,0 +1,205 @@
+package com.glsx.oms.bigdata.admin.bma.salesTask.model;
+
+import java.util.Date;
+
+import org.oreframework.commons.office.poi.zslin.utils.ExcelResources;
+
+import com.glsx.oms.bigdata.admin.bma.common.BasePojo;
+
+public class SalesTask extends BasePojo<SalesTask>{
+    private Integer id;
+
+    private String month;
+
+    private String area;
+
+    private String regionalManagerLeader;
+
+    private String regionalManager;
+
+    private String bizType;
+    
+    private String spCode;
+
+    private String spName;
+
+    private String tasknumDvd;
+
+    private String tasknumGps;
+
+    private String tasknumYunjing;
+
+    private String tasknumDidihuService;
+
+    private String tasknumWirelessCharge;
+
+    private String tasknumRearview;
+
+    private String tasknumFunctionRearview;
+
+    private Date createTime;
+
+    private Date updateTime;
+    
+    /**
+     * 表格类型
+     */
+    private String excelType;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getMonth() {
+        return month;
+    }
+
+    public void setMonth(String month) {
+        this.month = month;
+    }
+
+    @ExcelResources(title="区域",order=1)
+    public String getArea() {
+        return area;
+    }
+
+    public void setArea(String area) {
+        this.area = area;
+    }
+
+    @ExcelResources(title="大区经理",order=3)
+    public String getRegionalManagerLeader() {
+        return regionalManagerLeader;
+    }
+
+    public void setRegionalManagerLeader(String regionalManagerLeader) {
+        this.regionalManagerLeader = regionalManagerLeader;
+    }
+
+    @ExcelResources(title="区域经理",order=4)
+    public String getRegionalManager() {
+        return regionalManager;
+    }
+
+    public void setRegionalManager(String regionalManager) {
+        this.regionalManager = regionalManager;
+    }
+
+    @ExcelResources(title="业务类型",order=2)
+    public String getBizType() {
+        return bizType;
+    }
+
+    public void setBizType(String bizType) {
+        this.bizType = bizType;
+    }
+
+    public String getSpCode() {
+		return spCode;
+	}
+
+	public void setSpCode(String spCode) {
+		this.spCode = spCode;
+	}
+
+	@ExcelResources(title="服务商",order=5)
+	public String getSpName() {
+        return spName;
+    }
+
+    public void setSpName(String spName) {
+        this.spName = spName;
+    }
+
+    @ExcelResources(title="DVD任务数",order=6)
+    public String getTasknumDvd() {
+        return tasknumDvd;
+    }
+
+    public void setTasknumDvd(String tasknumDvd) {
+        this.tasknumDvd = tasknumDvd;
+    }
+
+    @ExcelResources(title="GPS任务数",order=7)
+    public String getTasknumGps() {
+        return tasknumGps;
+    }
+
+    public void setTasknumGps(String tasknumGps) {
+        this.tasknumGps = tasknumGps;
+    }
+
+    @ExcelResources(title="嘀嘀虎智能云镜任务数",order=8)
+    public String getTasknumYunjing() {
+        return tasknumYunjing;
+    }
+
+    public void setTasknumYunjing(String tasknumYunjing) {
+        this.tasknumYunjing = tasknumYunjing;
+    }
+
+    @ExcelResources(title="嘀嘀虎车联网服务激活卡-1年版任务数",order=9)
+    public String getTasknumDidihuService() {
+        return tasknumDidihuService;
+    }
+
+    public void setTasknumDidihuService(String tasknumDidihuService) {
+        this.tasknumDidihuService = tasknumDidihuService;
+    }
+
+    @ExcelResources(title="无线车充任务数",order=10)
+    public String getTasknumWirelessCharge() {
+        return tasknumWirelessCharge;
+    }
+
+    public void setTasknumWirelessCharge(String tasknumWirelessCharge) {
+        this.tasknumWirelessCharge = tasknumWirelessCharge;
+    }
+
+    @ExcelResources(title="纯流媒体后视镜任务数",order=11)
+    public String getTasknumRearview() {
+        return tasknumRearview;
+    }
+
+    public void setTasknumRearview(String tasknumRearview) {
+        this.tasknumRearview = tasknumRearview;
+    }
+
+    @ExcelResources(title="全功能_流媒体后视镜任务数",order=12)
+    public String getTasknumFunctionRearview() {
+        return tasknumFunctionRearview;
+    }
+
+    public void setTasknumFunctionRearview(String tasknumFunctionRearview) {
+        this.tasknumFunctionRearview = tasknumFunctionRearview;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Date getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
+    }
+
+	public String getExcelType() {
+		return excelType;
+	}
+
+	public void setExcelType(String excelType) {
+		this.excelType = excelType;
+	}
+    
+}

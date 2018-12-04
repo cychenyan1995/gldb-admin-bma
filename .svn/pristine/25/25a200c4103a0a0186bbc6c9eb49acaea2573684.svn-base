@@ -1,0 +1,20 @@
+import request from '@/utils/request';
+import { stringify } from 'qs';
+
+export async function queryList(params) {
+  return request(`/salesHistory/getListByPage?${stringify(params)}`);
+}
+
+export async function queryMonthlyDetailList(params) {
+  return request(`/salesHistory/getListByPage?${stringify(params)}`);
+}
+
+export async function queryMonthSalesHistory(params) {
+  return request(`/salesHistory/exportMonthSalesHistory?${stringify(params)}`);
+}
+
+export async function queryAreaList(){
+  return request(`/salesHistory/getAreaList`);
+}
+
+

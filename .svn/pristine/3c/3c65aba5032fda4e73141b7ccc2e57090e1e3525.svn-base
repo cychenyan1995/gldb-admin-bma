@@ -1,0 +1,38 @@
+export default [
+
+  // app
+  {
+    path: '/base',
+    component: '../layouts/BasicLayout',
+    Routes: ['src/pages/Authorized'],
+    authority: ['admin', 'user'],
+    routes: [
+      { path: '/base', redirect: '/base/salesTask'},
+      {
+        path: '/base/salesTask',
+        icon: 'table',
+        name: 'salesTask',
+        component: './salesTask/index',
+      },
+      {
+        path: '/base/salesHistory',
+        icon: 'dashboard',
+        name: 'salesHistory',
+        component: './salesHistory/index',
+      }
+    ]
+  },
+  {
+    path: '/send',
+    component: '../layouts/BlankLayout',
+    // Routes: ['src/pages/Authorized'],
+    //authority: ['admin', 'user'],
+    routes: [
+      //{ path: '/', redirect: '/sendMessage'},
+      {
+        path: '/send/sendMessage',
+        component: './sendMessage/index',
+      }
+    ]
+  },
+];

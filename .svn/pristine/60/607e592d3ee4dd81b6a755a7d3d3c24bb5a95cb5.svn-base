@@ -1,0 +1,31 @@
+export default {
+  namespace: 'history',
+
+  state: {
+    showDetail: false,
+    spName: '',
+    lineData: [1, 13, 37, 35, 15, 13, 25, 21, 6, 45],
+    barData1: [22, 22, 23, 77, 24, 55, 55, 89, 98, 164],
+    barData2: [201, 222, 223, 777, 244, 255, 555, 879, 938, 1364],
+    xAxisData: ['2018-01', '2018-02', '2018-03', '2018-04', '2018-05', '2018-06', '2018-07', '2018-08', '2018-09', '2018-10'],
+  },
+  effects: {},
+  reducers: {
+    showDetail(state, action) {
+      return {
+        ...state,
+        showDetail: action.payload.showDetail,
+        spName: action.payload.spName
+      };
+    },
+
+    selectChange(state, action) {
+      return {
+        ...state,
+        lineData: [1, 13, 33, 35, 15, 55, 25, 21, 6, 45],
+        barData1: [22, 22, 23, 88, 24, 55, 55, 89, 98, 164],
+        barData2: [201, 222, 223, 777, 99, 255, 555, 879, 938, 1364],
+      }
+    }
+  },
+};

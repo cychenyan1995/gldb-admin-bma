@@ -1,0 +1,15 @@
+import { stringify } from 'qs';
+import request from '@/utils/request';
+
+export async function queryTaskList(params){
+  return request(`/salesTask/list?${stringify(params)}`)
+}
+
+export async function updateTask(params){
+  return request('/salesTask/updateTask',{
+    method: 'POST',
+    body: {
+      ...params
+    }
+  })
+}

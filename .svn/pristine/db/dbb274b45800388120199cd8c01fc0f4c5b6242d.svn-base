@@ -1,0 +1,770 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.glsx.oms.bigdata.admin.bma.salesHistory.mapper.SalesHistoryMapper">
+  <resultMap id="BaseResultMap" type="com.glsx.oms.bigdata.admin.bma.salesHistory.model.SalesHistory">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="month" jdbcType="VARCHAR" property="month" />
+    <result column="month_region" jdbcType="VARCHAR" property="monthRegion" />
+    <result column="area" jdbcType="VARCHAR" property="area" />
+    <result column="biz_type" jdbcType="VARCHAR" property="bizType" />
+    <result column="sp_code" jdbcType="VARCHAR" property="spCode" />
+    <result column="sp_name" jdbcType="VARCHAR" property="spName" />
+    <result column="shop_code" jdbcType="VARCHAR" property="shopCode" />
+    <result column="shop_name" jdbcType="VARCHAR" property="shopName" />
+    <result column="sales_car" jdbcType="INTEGER" property="salesCar" />
+    <result column="sales_dvd" jdbcType="INTEGER" property="salesDvd" />
+    <result column="sales_gps" jdbcType="INTEGER" property="salesGps" />
+    <result column="sales_gl_dvd" jdbcType="INTEGER" property="salesGlDvd" />
+    <result column="sales_gl_gps" jdbcType="INTEGER" property="salesGlGps" />
+    <result column="sales_yunjing" jdbcType="INTEGER" property="salesYunjing" />
+    <result column="sales_didihu_service" jdbcType="INTEGER" property="salesDidihuService" />
+    <result column="sales_wireless_charge" jdbcType="INTEGER" property="salesWirelessCharge" />
+    <result column="sales_rearview" jdbcType="INTEGER" property="salesRearview" />
+    <result column="sales_function_rearview" jdbcType="INTEGER" property="salesFunctionRearview" />
+    <result column="sales_gl_total" jdbcType="INTEGER" property="salesGlTotal" />
+    <result column="sales_dvd_inter_largescreen" jdbcType="INTEGER" property="salesDvdInterLargescreen" />
+    <result column="sales_dvd_inter_originalscreen" jdbcType="INTEGER" property="salesDvdInterOriginalscreen" />
+    <result column="sales_screen_change" jdbcType="INTEGER" property="salesScreenChange" />
+    <result column="sales_reflection_upgrade" jdbcType="INTEGER" property="salesReflectionUpgrade" />
+    <result column="sales_big_screen_promotion" jdbcType="INTEGER" property="salesBigScreenPromotion" />
+    <result column="total_chain_ratio" jdbcType="REAL" property="totalChainRatio" />
+    <result column="gl_dvd_chain_ratio" jdbcType="REAL" property="glDvdChainRatio" />
+    <result column="gl_gps_chain_ratio" jdbcType="REAL" property="glGpsChainRatio" />
+    <result column="yunjing_chain_ratio" jdbcType="REAL" property="yunjingChainRatio" />
+    <result column="didihu_service_chain_ratio" jdbcType="REAL" property="didihuServiceChainRatio" />
+    <result column="wireless_charge_chain_ratio" jdbcType="REAL" property="wirelessChargeChainRatio" />
+    <result column="rearview_chain_ratio" jdbcType="REAL" property="rearviewChainRatio" />
+    <result column="fun_rearview_chain_ratio" jdbcType="REAL" property="funRearviewChainRatio" />
+    <result column="ratio_install_gl_dvd" jdbcType="REAL" property="ratioInstallGlDvd" />
+    <result column="ratio_gl_dvd" jdbcType="REAL" property="ratioGlDvd" />
+    <result column="ratio_gl_gps" jdbcType="REAL" property="ratioGlGps" />
+    <result column="cost_dvd" jdbcType="REAL" property="costDvd" />
+    <result column="cost_gps" jdbcType="REAL" property="costGps" />
+    <result column="cost_yunjing" jdbcType="REAL" property="costYunjing" />
+    <result column="cost_didihu_service" jdbcType="REAL" property="costDidihuService" />
+    <result column="cost_wireless_charge" jdbcType="REAL" property="costWirelessCharge" />
+    <result column="cost_rearview" jdbcType="REAL" property="costRearview" />
+    <result column="cost_function_rearview" jdbcType="REAL" property="costFunctionRearview" />
+    <result column="cost_total" jdbcType="REAL" property="costTotal" />
+    <result column="cost_dvd_inter_largescreen" jdbcType="REAL" property="costDvdInterLargescreen" />
+    <result column="cost_dvd_inter_originalscreen" jdbcType="REAL" property="costDvdInterOriginalscreen" />
+    <result column="cost_screen_change" jdbcType="REAL" property="costScreenChange" />
+    <result column="cost_reflection_upgrade" jdbcType="REAL" property="costReflectionUpgrade" />
+    <result column="cost_big_screen_promotion" jdbcType="REAL" property="costBigScreenPromotion" />
+    <result column="total_deliver" jdbcType="INTEGER" property="totalDeliver" />
+    <result column="total_sales" jdbcType="INTEGER" property="totalSales" />
+    <result column="total_inventory" jdbcType="INTEGER" property="totalInventory" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, month, month_region, area, biz_type, sp_code, sp_name, shop_code, shop_name, 
+    sales_car, sales_dvd, sales_gps, sales_gl_dvd, sales_gl_gps, sales_yunjing, sales_didihu_service, 
+    sales_wireless_charge, sales_rearview, sales_function_rearview, sales_gl_total, sales_dvd_inter_largescreen, 
+    sales_dvd_inter_originalscreen, sales_screen_change, sales_reflection_upgrade, sales_big_screen_promotion, 
+    total_chain_ratio, gl_dvd_chain_ratio, gl_gps_chain_ratio, yunjing_chain_ratio, didihu_service_chain_ratio, 
+    wireless_charge_chain_ratio, rearview_chain_ratio, fun_rearview_chain_ratio, ratio_install_gl_dvd, 
+    ratio_gl_dvd, ratio_gl_gps, cost_dvd, cost_gps, cost_yunjing, cost_didihu_service, 
+    cost_wireless_charge, cost_rearview, cost_function_rearview, cost_total, cost_dvd_inter_largescreen, 
+    cost_dvd_inter_originalscreen, cost_screen_change, cost_reflection_upgrade, cost_big_screen_promotion, 
+    total_deliver, total_sales, total_inventory, create_time, update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tbl_sales_statement_monthly
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tbl_sales_statement_monthly
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.glsx.oms.bigdata.admin.bma.salesHistory.model.SalesHistory">
+    insert into tbl_sales_statement_monthly (id, month, month_region, 
+      area, biz_type, sp_code, 
+      sp_name, shop_code, shop_name, 
+      sales_car, sales_dvd, sales_gps, 
+      sales_gl_dvd, sales_gl_gps, sales_yunjing, 
+      sales_didihu_service, sales_wireless_charge, 
+      sales_rearview, sales_function_rearview, sales_gl_total, 
+      sales_dvd_inter_largescreen, sales_dvd_inter_originalscreen, 
+      sales_screen_change, sales_reflection_upgrade, 
+      sales_big_screen_promotion, total_chain_ratio, 
+      gl_dvd_chain_ratio, gl_gps_chain_ratio, yunjing_chain_ratio, 
+      didihu_service_chain_ratio, wireless_charge_chain_ratio, 
+      rearview_chain_ratio, fun_rearview_chain_ratio, ratio_install_gl_dvd, 
+      ratio_gl_dvd, ratio_gl_gps, cost_dvd, 
+      cost_gps, cost_yunjing, cost_didihu_service, 
+      cost_wireless_charge, cost_rearview, cost_function_rearview, 
+      cost_total, cost_dvd_inter_largescreen, cost_dvd_inter_originalscreen, 
+      cost_screen_change, cost_reflection_upgrade, cost_big_screen_promotion, 
+      total_deliver, total_sales, total_inventory, 
+      create_time, update_time)
+    values (#{id,jdbcType=INTEGER}, #{month,jdbcType=VARCHAR}, #{monthRegion,jdbcType=VARCHAR}, 
+      #{area,jdbcType=VARCHAR}, #{bizType,jdbcType=VARCHAR}, #{spCode,jdbcType=VARCHAR}, 
+      #{spName,jdbcType=VARCHAR}, #{shopCode,jdbcType=VARCHAR}, #{shopName,jdbcType=VARCHAR}, 
+      #{salesCar,jdbcType=INTEGER}, #{salesDvd,jdbcType=INTEGER}, #{salesGps,jdbcType=INTEGER}, 
+      #{salesGlDvd,jdbcType=INTEGER}, #{salesGlGps,jdbcType=INTEGER}, #{salesYunjing,jdbcType=INTEGER}, 
+      #{salesDidihuService,jdbcType=INTEGER}, #{salesWirelessCharge,jdbcType=INTEGER}, 
+      #{salesRearview,jdbcType=INTEGER}, #{salesFunctionRearview,jdbcType=INTEGER}, #{salesGlTotal,jdbcType=INTEGER}, 
+      #{salesDvdInterLargescreen,jdbcType=INTEGER}, #{salesDvdInterOriginalscreen,jdbcType=INTEGER}, 
+      #{salesScreenChange,jdbcType=INTEGER}, #{salesReflectionUpgrade,jdbcType=INTEGER}, 
+      #{salesBigScreenPromotion,jdbcType=INTEGER}, #{totalChainRatio,jdbcType=REAL}, 
+      #{glDvdChainRatio,jdbcType=REAL}, #{glGpsChainRatio,jdbcType=REAL}, #{yunjingChainRatio,jdbcType=REAL}, 
+      #{didihuServiceChainRatio,jdbcType=REAL}, #{wirelessChargeChainRatio,jdbcType=REAL}, 
+      #{rearviewChainRatio,jdbcType=REAL}, #{funRearviewChainRatio,jdbcType=REAL}, #{ratioInstallGlDvd,jdbcType=REAL}, 
+      #{ratioGlDvd,jdbcType=REAL}, #{ratioGlGps,jdbcType=REAL}, #{costDvd,jdbcType=REAL}, 
+      #{costGps,jdbcType=REAL}, #{costYunjing,jdbcType=REAL}, #{costDidihuService,jdbcType=REAL}, 
+      #{costWirelessCharge,jdbcType=REAL}, #{costRearview,jdbcType=REAL}, #{costFunctionRearview,jdbcType=REAL}, 
+      #{costTotal,jdbcType=REAL}, #{costDvdInterLargescreen,jdbcType=REAL}, #{costDvdInterOriginalscreen,jdbcType=REAL}, 
+      #{costScreenChange,jdbcType=REAL}, #{costReflectionUpgrade,jdbcType=REAL}, #{costBigScreenPromotion,jdbcType=REAL}, 
+      #{totalDeliver,jdbcType=INTEGER}, #{totalSales,jdbcType=INTEGER}, #{totalInventory,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.glsx.oms.bigdata.admin.bma.salesHistory.model.SalesHistory">
+    insert into tbl_sales_statement_monthly
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="month != null">
+        month,
+      </if>
+      <if test="monthRegion != null">
+        month_region,
+      </if>
+      <if test="area != null">
+        area,
+      </if>
+      <if test="bizType != null">
+        biz_type,
+      </if>
+      <if test="spCode != null">
+        sp_code,
+      </if>
+      <if test="spName != null">
+        sp_name,
+      </if>
+      <if test="shopCode != null">
+        shop_code,
+      </if>
+      <if test="shopName != null">
+        shop_name,
+      </if>
+      <if test="salesCar != null">
+        sales_car,
+      </if>
+      <if test="salesDvd != null">
+        sales_dvd,
+      </if>
+      <if test="salesGps != null">
+        sales_gps,
+      </if>
+      <if test="salesGlDvd != null">
+        sales_gl_dvd,
+      </if>
+      <if test="salesGlGps != null">
+        sales_gl_gps,
+      </if>
+      <if test="salesYunjing != null">
+        sales_yunjing,
+      </if>
+      <if test="salesDidihuService != null">
+        sales_didihu_service,
+      </if>
+      <if test="salesWirelessCharge != null">
+        sales_wireless_charge,
+      </if>
+      <if test="salesRearview != null">
+        sales_rearview,
+      </if>
+      <if test="salesFunctionRearview != null">
+        sales_function_rearview,
+      </if>
+      <if test="salesGlTotal != null">
+        sales_gl_total,
+      </if>
+      <if test="salesDvdInterLargescreen != null">
+        sales_dvd_inter_largescreen,
+      </if>
+      <if test="salesDvdInterOriginalscreen != null">
+        sales_dvd_inter_originalscreen,
+      </if>
+      <if test="salesScreenChange != null">
+        sales_screen_change,
+      </if>
+      <if test="salesReflectionUpgrade != null">
+        sales_reflection_upgrade,
+      </if>
+      <if test="salesBigScreenPromotion != null">
+        sales_big_screen_promotion,
+      </if>
+      <if test="totalChainRatio != null">
+        total_chain_ratio,
+      </if>
+      <if test="glDvdChainRatio != null">
+        gl_dvd_chain_ratio,
+      </if>
+      <if test="glGpsChainRatio != null">
+        gl_gps_chain_ratio,
+      </if>
+      <if test="yunjingChainRatio != null">
+        yunjing_chain_ratio,
+      </if>
+      <if test="didihuServiceChainRatio != null">
+        didihu_service_chain_ratio,
+      </if>
+      <if test="wirelessChargeChainRatio != null">
+        wireless_charge_chain_ratio,
+      </if>
+      <if test="rearviewChainRatio != null">
+        rearview_chain_ratio,
+      </if>
+      <if test="funRearviewChainRatio != null">
+        fun_rearview_chain_ratio,
+      </if>
+      <if test="ratioInstallGlDvd != null">
+        ratio_install_gl_dvd,
+      </if>
+      <if test="ratioGlDvd != null">
+        ratio_gl_dvd,
+      </if>
+      <if test="ratioGlGps != null">
+        ratio_gl_gps,
+      </if>
+      <if test="costDvd != null">
+        cost_dvd,
+      </if>
+      <if test="costGps != null">
+        cost_gps,
+      </if>
+      <if test="costYunjing != null">
+        cost_yunjing,
+      </if>
+      <if test="costDidihuService != null">
+        cost_didihu_service,
+      </if>
+      <if test="costWirelessCharge != null">
+        cost_wireless_charge,
+      </if>
+      <if test="costRearview != null">
+        cost_rearview,
+      </if>
+      <if test="costFunctionRearview != null">
+        cost_function_rearview,
+      </if>
+      <if test="costTotal != null">
+        cost_total,
+      </if>
+      <if test="costDvdInterLargescreen != null">
+        cost_dvd_inter_largescreen,
+      </if>
+      <if test="costDvdInterOriginalscreen != null">
+        cost_dvd_inter_originalscreen,
+      </if>
+      <if test="costScreenChange != null">
+        cost_screen_change,
+      </if>
+      <if test="costReflectionUpgrade != null">
+        cost_reflection_upgrade,
+      </if>
+      <if test="costBigScreenPromotion != null">
+        cost_big_screen_promotion,
+      </if>
+      <if test="totalDeliver != null">
+        total_deliver,
+      </if>
+      <if test="totalSales != null">
+        total_sales,
+      </if>
+      <if test="totalInventory != null">
+        total_inventory,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="month != null">
+        #{month,jdbcType=VARCHAR},
+      </if>
+      <if test="monthRegion != null">
+        #{monthRegion,jdbcType=VARCHAR},
+      </if>
+      <if test="area != null">
+        #{area,jdbcType=VARCHAR},
+      </if>
+      <if test="bizType != null">
+        #{bizType,jdbcType=VARCHAR},
+      </if>
+      <if test="spCode != null">
+        #{spCode,jdbcType=VARCHAR},
+      </if>
+      <if test="spName != null">
+        #{spName,jdbcType=VARCHAR},
+      </if>
+      <if test="shopCode != null">
+        #{shopCode,jdbcType=VARCHAR},
+      </if>
+      <if test="shopName != null">
+        #{shopName,jdbcType=VARCHAR},
+      </if>
+      <if test="salesCar != null">
+        #{salesCar,jdbcType=INTEGER},
+      </if>
+      <if test="salesDvd != null">
+        #{salesDvd,jdbcType=INTEGER},
+      </if>
+      <if test="salesGps != null">
+        #{salesGps,jdbcType=INTEGER},
+      </if>
+      <if test="salesGlDvd != null">
+        #{salesGlDvd,jdbcType=INTEGER},
+      </if>
+      <if test="salesGlGps != null">
+        #{salesGlGps,jdbcType=INTEGER},
+      </if>
+      <if test="salesYunjing != null">
+        #{salesYunjing,jdbcType=INTEGER},
+      </if>
+      <if test="salesDidihuService != null">
+        #{salesDidihuService,jdbcType=INTEGER},
+      </if>
+      <if test="salesWirelessCharge != null">
+        #{salesWirelessCharge,jdbcType=INTEGER},
+      </if>
+      <if test="salesRearview != null">
+        #{salesRearview,jdbcType=INTEGER},
+      </if>
+      <if test="salesFunctionRearview != null">
+        #{salesFunctionRearview,jdbcType=INTEGER},
+      </if>
+      <if test="salesGlTotal != null">
+        #{salesGlTotal,jdbcType=INTEGER},
+      </if>
+      <if test="salesDvdInterLargescreen != null">
+        #{salesDvdInterLargescreen,jdbcType=INTEGER},
+      </if>
+      <if test="salesDvdInterOriginalscreen != null">
+        #{salesDvdInterOriginalscreen,jdbcType=INTEGER},
+      </if>
+      <if test="salesScreenChange != null">
+        #{salesScreenChange,jdbcType=INTEGER},
+      </if>
+      <if test="salesReflectionUpgrade != null">
+        #{salesReflectionUpgrade,jdbcType=INTEGER},
+      </if>
+      <if test="salesBigScreenPromotion != null">
+        #{salesBigScreenPromotion,jdbcType=INTEGER},
+      </if>
+      <if test="totalChainRatio != null">
+        #{totalChainRatio,jdbcType=REAL},
+      </if>
+      <if test="glDvdChainRatio != null">
+        #{glDvdChainRatio,jdbcType=REAL},
+      </if>
+      <if test="glGpsChainRatio != null">
+        #{glGpsChainRatio,jdbcType=REAL},
+      </if>
+      <if test="yunjingChainRatio != null">
+        #{yunjingChainRatio,jdbcType=REAL},
+      </if>
+      <if test="didihuServiceChainRatio != null">
+        #{didihuServiceChainRatio,jdbcType=REAL},
+      </if>
+      <if test="wirelessChargeChainRatio != null">
+        #{wirelessChargeChainRatio,jdbcType=REAL},
+      </if>
+      <if test="rearviewChainRatio != null">
+        #{rearviewChainRatio,jdbcType=REAL},
+      </if>
+      <if test="funRearviewChainRatio != null">
+        #{funRearviewChainRatio,jdbcType=REAL},
+      </if>
+      <if test="ratioInstallGlDvd != null">
+        #{ratioInstallGlDvd,jdbcType=REAL},
+      </if>
+      <if test="ratioGlDvd != null">
+        #{ratioGlDvd,jdbcType=REAL},
+      </if>
+      <if test="ratioGlGps != null">
+        #{ratioGlGps,jdbcType=REAL},
+      </if>
+      <if test="costDvd != null">
+        #{costDvd,jdbcType=REAL},
+      </if>
+      <if test="costGps != null">
+        #{costGps,jdbcType=REAL},
+      </if>
+      <if test="costYunjing != null">
+        #{costYunjing,jdbcType=REAL},
+      </if>
+      <if test="costDidihuService != null">
+        #{costDidihuService,jdbcType=REAL},
+      </if>
+      <if test="costWirelessCharge != null">
+        #{costWirelessCharge,jdbcType=REAL},
+      </if>
+      <if test="costRearview != null">
+        #{costRearview,jdbcType=REAL},
+      </if>
+      <if test="costFunctionRearview != null">
+        #{costFunctionRearview,jdbcType=REAL},
+      </if>
+      <if test="costTotal != null">
+        #{costTotal,jdbcType=REAL},
+      </if>
+      <if test="costDvdInterLargescreen != null">
+        #{costDvdInterLargescreen,jdbcType=REAL},
+      </if>
+      <if test="costDvdInterOriginalscreen != null">
+        #{costDvdInterOriginalscreen,jdbcType=REAL},
+      </if>
+      <if test="costScreenChange != null">
+        #{costScreenChange,jdbcType=REAL},
+      </if>
+      <if test="costReflectionUpgrade != null">
+        #{costReflectionUpgrade,jdbcType=REAL},
+      </if>
+      <if test="costBigScreenPromotion != null">
+        #{costBigScreenPromotion,jdbcType=REAL},
+      </if>
+      <if test="totalDeliver != null">
+        #{totalDeliver,jdbcType=INTEGER},
+      </if>
+      <if test="totalSales != null">
+        #{totalSales,jdbcType=INTEGER},
+      </if>
+      <if test="totalInventory != null">
+        #{totalInventory,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.glsx.oms.bigdata.admin.bma.salesHistory.model.SalesHistory">
+    update tbl_sales_statement_monthly
+    <set>
+      <if test="month != null">
+        month = #{month,jdbcType=VARCHAR},
+      </if>
+      <if test="monthRegion != null">
+        month_region = #{monthRegion,jdbcType=VARCHAR},
+      </if>
+      <if test="area != null">
+        area = #{area,jdbcType=VARCHAR},
+      </if>
+      <if test="bizType != null">
+        biz_type = #{bizType,jdbcType=VARCHAR},
+      </if>
+      <if test="spCode != null">
+        sp_code = #{spCode,jdbcType=VARCHAR},
+      </if>
+      <if test="spName != null">
+        sp_name = #{spName,jdbcType=VARCHAR},
+      </if>
+      <if test="shopCode != null">
+        shop_code = #{shopCode,jdbcType=VARCHAR},
+      </if>
+      <if test="shopName != null">
+        shop_name = #{shopName,jdbcType=VARCHAR},
+      </if>
+      <if test="salesCar != null">
+        sales_car = #{salesCar,jdbcType=INTEGER},
+      </if>
+      <if test="salesDvd != null">
+        sales_dvd = #{salesDvd,jdbcType=INTEGER},
+      </if>
+      <if test="salesGps != null">
+        sales_gps = #{salesGps,jdbcType=INTEGER},
+      </if>
+      <if test="salesGlDvd != null">
+        sales_gl_dvd = #{salesGlDvd,jdbcType=INTEGER},
+      </if>
+      <if test="salesGlGps != null">
+        sales_gl_gps = #{salesGlGps,jdbcType=INTEGER},
+      </if>
+      <if test="salesYunjing != null">
+        sales_yunjing = #{salesYunjing,jdbcType=INTEGER},
+      </if>
+      <if test="salesDidihuService != null">
+        sales_didihu_service = #{salesDidihuService,jdbcType=INTEGER},
+      </if>
+      <if test="salesWirelessCharge != null">
+        sales_wireless_charge = #{salesWirelessCharge,jdbcType=INTEGER},
+      </if>
+      <if test="salesRearview != null">
+        sales_rearview = #{salesRearview,jdbcType=INTEGER},
+      </if>
+      <if test="salesFunctionRearview != null">
+        sales_function_rearview = #{salesFunctionRearview,jdbcType=INTEGER},
+      </if>
+      <if test="salesGlTotal != null">
+        sales_gl_total = #{salesGlTotal,jdbcType=INTEGER},
+      </if>
+      <if test="salesDvdInterLargescreen != null">
+        sales_dvd_inter_largescreen = #{salesDvdInterLargescreen,jdbcType=INTEGER},
+      </if>
+      <if test="salesDvdInterOriginalscreen != null">
+        sales_dvd_inter_originalscreen = #{salesDvdInterOriginalscreen,jdbcType=INTEGER},
+      </if>
+      <if test="salesScreenChange != null">
+        sales_screen_change = #{salesScreenChange,jdbcType=INTEGER},
+      </if>
+      <if test="salesReflectionUpgrade != null">
+        sales_reflection_upgrade = #{salesReflectionUpgrade,jdbcType=INTEGER},
+      </if>
+      <if test="salesBigScreenPromotion != null">
+        sales_big_screen_promotion = #{salesBigScreenPromotion,jdbcType=INTEGER},
+      </if>
+      <if test="totalChainRatio != null">
+        total_chain_ratio = #{totalChainRatio,jdbcType=REAL},
+      </if>
+      <if test="glDvdChainRatio != null">
+        gl_dvd_chain_ratio = #{glDvdChainRatio,jdbcType=REAL},
+      </if>
+      <if test="glGpsChainRatio != null">
+        gl_gps_chain_ratio = #{glGpsChainRatio,jdbcType=REAL},
+      </if>
+      <if test="yunjingChainRatio != null">
+        yunjing_chain_ratio = #{yunjingChainRatio,jdbcType=REAL},
+      </if>
+      <if test="didihuServiceChainRatio != null">
+        didihu_service_chain_ratio = #{didihuServiceChainRatio,jdbcType=REAL},
+      </if>
+      <if test="wirelessChargeChainRatio != null">
+        wireless_charge_chain_ratio = #{wirelessChargeChainRatio,jdbcType=REAL},
+      </if>
+      <if test="rearviewChainRatio != null">
+        rearview_chain_ratio = #{rearviewChainRatio,jdbcType=REAL},
+      </if>
+      <if test="funRearviewChainRatio != null">
+        fun_rearview_chain_ratio = #{funRearviewChainRatio,jdbcType=REAL},
+      </if>
+      <if test="ratioInstallGlDvd != null">
+        ratio_install_gl_dvd = #{ratioInstallGlDvd,jdbcType=REAL},
+      </if>
+      <if test="ratioGlDvd != null">
+        ratio_gl_dvd = #{ratioGlDvd,jdbcType=REAL},
+      </if>
+      <if test="ratioGlGps != null">
+        ratio_gl_gps = #{ratioGlGps,jdbcType=REAL},
+      </if>
+      <if test="costDvd != null">
+        cost_dvd = #{costDvd,jdbcType=REAL},
+      </if>
+      <if test="costGps != null">
+        cost_gps = #{costGps,jdbcType=REAL},
+      </if>
+      <if test="costYunjing != null">
+        cost_yunjing = #{costYunjing,jdbcType=REAL},
+      </if>
+      <if test="costDidihuService != null">
+        cost_didihu_service = #{costDidihuService,jdbcType=REAL},
+      </if>
+      <if test="costWirelessCharge != null">
+        cost_wireless_charge = #{costWirelessCharge,jdbcType=REAL},
+      </if>
+      <if test="costRearview != null">
+        cost_rearview = #{costRearview,jdbcType=REAL},
+      </if>
+      <if test="costFunctionRearview != null">
+        cost_function_rearview = #{costFunctionRearview,jdbcType=REAL},
+      </if>
+      <if test="costTotal != null">
+        cost_total = #{costTotal,jdbcType=REAL},
+      </if>
+      <if test="costDvdInterLargescreen != null">
+        cost_dvd_inter_largescreen = #{costDvdInterLargescreen,jdbcType=REAL},
+      </if>
+      <if test="costDvdInterOriginalscreen != null">
+        cost_dvd_inter_originalscreen = #{costDvdInterOriginalscreen,jdbcType=REAL},
+      </if>
+      <if test="costScreenChange != null">
+        cost_screen_change = #{costScreenChange,jdbcType=REAL},
+      </if>
+      <if test="costReflectionUpgrade != null">
+        cost_reflection_upgrade = #{costReflectionUpgrade,jdbcType=REAL},
+      </if>
+      <if test="costBigScreenPromotion != null">
+        cost_big_screen_promotion = #{costBigScreenPromotion,jdbcType=REAL},
+      </if>
+      <if test="totalDeliver != null">
+        total_deliver = #{totalDeliver,jdbcType=INTEGER},
+      </if>
+      <if test="totalSales != null">
+        total_sales = #{totalSales,jdbcType=INTEGER},
+      </if>
+      <if test="totalInventory != null">
+        total_inventory = #{totalInventory,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.glsx.oms.bigdata.admin.bma.salesHistory.model.SalesHistory">
+    update tbl_sales_statement_monthly
+    set month = #{month,jdbcType=VARCHAR},
+      month_region = #{monthRegion,jdbcType=VARCHAR},
+      area = #{area,jdbcType=VARCHAR},
+      biz_type = #{bizType,jdbcType=VARCHAR},
+      sp_code = #{spCode,jdbcType=VARCHAR},
+      sp_name = #{spName,jdbcType=VARCHAR},
+      shop_code = #{shopCode,jdbcType=VARCHAR},
+      shop_name = #{shopName,jdbcType=VARCHAR},
+      sales_car = #{salesCar,jdbcType=INTEGER},
+      sales_dvd = #{salesDvd,jdbcType=INTEGER},
+      sales_gps = #{salesGps,jdbcType=INTEGER},
+      sales_gl_dvd = #{salesGlDvd,jdbcType=INTEGER},
+      sales_gl_gps = #{salesGlGps,jdbcType=INTEGER},
+      sales_yunjing = #{salesYunjing,jdbcType=INTEGER},
+      sales_didihu_service = #{salesDidihuService,jdbcType=INTEGER},
+      sales_wireless_charge = #{salesWirelessCharge,jdbcType=INTEGER},
+      sales_rearview = #{salesRearview,jdbcType=INTEGER},
+      sales_function_rearview = #{salesFunctionRearview,jdbcType=INTEGER},
+      sales_gl_total = #{salesGlTotal,jdbcType=INTEGER},
+      sales_dvd_inter_largescreen = #{salesDvdInterLargescreen,jdbcType=INTEGER},
+      sales_dvd_inter_originalscreen = #{salesDvdInterOriginalscreen,jdbcType=INTEGER},
+      sales_screen_change = #{salesScreenChange,jdbcType=INTEGER},
+      sales_reflection_upgrade = #{salesReflectionUpgrade,jdbcType=INTEGER},
+      sales_big_screen_promotion = #{salesBigScreenPromotion,jdbcType=INTEGER},
+      total_chain_ratio = #{totalChainRatio,jdbcType=REAL},
+      gl_dvd_chain_ratio = #{glDvdChainRatio,jdbcType=REAL},
+      gl_gps_chain_ratio = #{glGpsChainRatio,jdbcType=REAL},
+      yunjing_chain_ratio = #{yunjingChainRatio,jdbcType=REAL},
+      didihu_service_chain_ratio = #{didihuServiceChainRatio,jdbcType=REAL},
+      wireless_charge_chain_ratio = #{wirelessChargeChainRatio,jdbcType=REAL},
+      rearview_chain_ratio = #{rearviewChainRatio,jdbcType=REAL},
+      fun_rearview_chain_ratio = #{funRearviewChainRatio,jdbcType=REAL},
+      ratio_install_gl_dvd = #{ratioInstallGlDvd,jdbcType=REAL},
+      ratio_gl_dvd = #{ratioGlDvd,jdbcType=REAL},
+      ratio_gl_gps = #{ratioGlGps,jdbcType=REAL},
+      cost_dvd = #{costDvd,jdbcType=REAL},
+      cost_gps = #{costGps,jdbcType=REAL},
+      cost_yunjing = #{costYunjing,jdbcType=REAL},
+      cost_didihu_service = #{costDidihuService,jdbcType=REAL},
+      cost_wireless_charge = #{costWirelessCharge,jdbcType=REAL},
+      cost_rearview = #{costRearview,jdbcType=REAL},
+      cost_function_rearview = #{costFunctionRearview,jdbcType=REAL},
+      cost_total = #{costTotal,jdbcType=REAL},
+      cost_dvd_inter_largescreen = #{costDvdInterLargescreen,jdbcType=REAL},
+      cost_dvd_inter_originalscreen = #{costDvdInterOriginalscreen,jdbcType=REAL},
+      cost_screen_change = #{costScreenChange,jdbcType=REAL},
+      cost_reflection_upgrade = #{costReflectionUpgrade,jdbcType=REAL},
+      cost_big_screen_promotion = #{costBigScreenPromotion,jdbcType=REAL},
+      total_deliver = #{totalDeliver,jdbcType=INTEGER},
+      total_sales = #{totalSales,jdbcType=INTEGER},
+      total_inventory = #{totalInventory,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+	<select id="selectAllSalesHistory"
+		parameterType="com.glsx.oms.bigdata.admin.bma.salesHistory.model.SalesHistory"
+		resultType="com.glsx.oms.bigdata.admin.bma.salesHistory.model.SalesHistory">
+		SELECT id id,
+		month month,
+		area area,
+		biz_type bizType,
+		sp_code spCode,
+		sp_name spName,
+		sales_gl_dvd salesGlDvd,
+		sales_gl_gps salesGlGps,
+		sales_yunjing salesYunjing,
+		sales_didihu_service salesDidihuService,
+		sales_wireless_charge salesWirelessCharge,
+		sales_rearview salesRearview,
+		sales_function_rearview salesFunctionRearview
+		FROM tbl_sales_statement_monthly
+		WHERE 1 = 1
+		<if test="month != null">
+			and month=#{month}
+		</if>
+		<if test="spCode != null and spCode != ''">
+			and sp_code=#{spCode}
+		</if>
+		<if test="spName != null and spName != ''">
+			and sp_name=#{spName}
+		</if>
+	</select>
+	
+	<select id="selectSpSalesHistory"
+		parameterType="com.glsx.oms.bigdata.admin.bma.salesHistory.model.SalesHistory"
+		resultType="com.glsx.oms.bigdata.admin.bma.salesHistory.model.SalesHistory">
+		SELECT id id,
+		month month,
+		area area,
+		biz_type bizType,
+		sp_code spCode,
+		sp_name spName,
+		sum(sales_gl_dvd) salesGlDvd,
+		sum(sales_gl_gps) salesGlGps,
+		sum(sales_yunjing) salesYunjing,
+		sum(sales_didihu_service) salesDidihuService,
+		sum(sales_wireless_charge) salesWirelessCharge,
+		sum(sales_rearview) salesRearview,
+		sum(sales_function_rearview) salesFunctionRearview
+		FROM tbl_sales_statement_monthly
+		WHERE 1 = 1
+		<if test="month != null">
+			and month=#{month}
+		</if>
+		<if test="spCode != null and spCode != ''">
+			and sp_code=#{spCode}
+		</if>
+		<if test="spName != null and spName != ''">
+			and sp_name=#{spName}
+		</if>
+		<if test="area != null and area != ''">
+			and area=#{area}
+		</if>
+		GROUP BY sp_code,month
+	</select>
+	
+	<select id="selectSpSalesHistoryByMonth"
+		parameterType="com.glsx.oms.bigdata.admin.bma.salesHistory.model.SalesHistory"
+		resultType="com.glsx.oms.bigdata.admin.bma.salesHistory.model.SalesHistory">
+		SELECT id id,
+		month month,
+		area area,
+		biz_type bizType,
+		sp_code spCode,
+		sp_name spName,
+		sum(sales_gl_dvd) salesGlDvd,
+		sum(sales_gl_gps) salesGlGps,
+		sum(sales_yunjing) salesYunjing,
+		sum(sales_didihu_service) salesDidihuService,
+		sum(sales_wireless_charge) salesWirelessCharge,
+		sum(sales_rearview) salesRearview,
+		sum(sales_function_rearview) salesFunctionRearview
+		FROM tbl_sales_statement_monthly
+		WHERE 1 = 1
+		<if test="month != null">
+			and month=#{month}
+		</if>
+		GROUP BY sp_code,month
+	</select>
+	
+	<select id="selectByArea" parameterType="com.glsx.oms.bigdata.admin.bma.salesHistory.model.SalesHistory" resultMap="BaseResultMap">
+	SELECT DISTINCT(area) area 
+	FROM tbl_sales_statement_monthly
+	WHERE area IS NOT NULL
+    </select>
+	
+</mapper>

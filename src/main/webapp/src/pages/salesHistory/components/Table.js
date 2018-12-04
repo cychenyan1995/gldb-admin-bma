@@ -1,0 +1,188 @@
+import React, {Component} from 'react';
+// import Pie from '@/components/Chart/Pie/NormalPie';
+import { connect } from 'dva';
+import {Row, Col, DatePicker, Button, Card, notification} from 'antd';
+import moment from 'moment';
+import TableCustom from "../../../components/Table/Table";
+import FormCustom from "./Form";
+
+
+@connect(({ historyTable }) => ({
+  historyTable,// namespace action
+}))
+class HistoryTable extends Component{
+  constructor(props){
+    super(props);
+    const {dispatch, historyTable} = this.props;
+    const filters = historyTable.filters;
+    filters.month = '2018-11';
+    filters.currentPage = 1;
+    filters.pageSize =10;
+    dispatch({
+      type : 'historyTable/fetchList',
+      payload : filters
+    });
+    dispatch({
+      type: 'historyTable/getFilters',
+      payload: filters
+    });
+  }
+
+  onChange = (page, pageSize) => {
+    const {dispatch, historyTable} = this.props;
+    const filters = historyTable.filters;
+    filters.currentPage = page;
+    filters.pageSize =pageSize;
+    dispatch({
+      type: 'historyTable/fetchList',
+      payload: filters,
+    });
+  };
+
+  onShowSizeChange = (current, size) => {
+    const { dispatch ,historyTable} = this.props;
+    const filters = historyTable.filters;
+    filters.currentPage = current;
+    filters.pageSize = size;
+    dispatch({
+      type: 'historyTable/fetchList',
+      payload: filters,
+    });
+  };
+
+  onVisibleChange = (visible) => {
+    const {dispatch} = this.props;
+    dispatch({
+      type: 'historyTable/showSearch',
+      payload: visible,
+    });
+  };
+
+  handleSubmit = (form,closed) => {
+    console.log(form);
+    const param = form;
+
+    param.pageSize = 10;
+    const {dispatch, historyTable} = this.props;
+    const filters = historyTable.filters;
+    param.month = filters.month;
+    param.pageSize = filters.pageSize;
+    dispatch({
+      type: 'historyTable/fetchList',
+      payload: param
+    });
+    dispatch({
+      type: 'historyTable/getFilters',
+      payload: param
+    });
+    dispatch({
+      type: 'historyTable/search',
+      payload: form,
+    });
+    dispatch({
+      type: 'historyTable/showSearch',
+      payload: closed,
+    });
+  };
+
+  handleConfirmSubmit = (rule, value, callback) => {
+    const { handleConfirmSubmit } = this.props
+    handleConfirmSubmit(rule, value, callback);
+  };
+
+  toDetail = (text) => {
+    const {toDetail} = this.props;
+    toDetail(text);
+  };
+
+  onChangeMonth = (date,dateString) =>{
+    const { dispatch,historyTable} = this.props;
+    const filters = historyTable.filters;
+    filters.month = dateString;
+    dispatch({
+      // type : 'historyTable/fetchListByMonth',
+      type: 'historyTable/fetchList',
+      payload : filters
+    });
+    dispatch({
+      type: 'historyTable/getFilters',
+      payload: filters
+    });
+  };
+
+  // 导出
+  exportByMonth = () =>{
+    const { dispatch,historyTable } = this.props;
+    dispatch({
+      type : 'historyTable/fetchListByMonth',
+      payload :historyTable.filters
+    })
+    notification.open({
+      message: '文件下载',
+      description: '导出文件地址为 E:\\data\\gldb-admin-bma',
+      duration: 0,
+    });
+  };
+
+  render(){
+    const {historyTable} = this.props;
+
+    const columns = [
+      { title: '商户ID', width: 80, dataIndex: 'spCode', key: 'spCode', fixed: 'left' },
+      { title: '商户名称', width: 250, dataIndex: 'spName', key: 'spName',fixed: 'left',
+        render: (text,record) => <a onClick={this.toDetail.bind(this,record.spCode)}>{text}</a>},
+      { title: '区域', width: 110, dataIndex: 'area', key: 'area'},
+      { title: '区域经理', width: 150, dataIndex: 'regionalManager', key: 'regionalManager'},
+      { title: '业务类型', width: 110, dataIndex: 'bizType', key: 'bizType'},
+      { title: '大区经理', width: 110, dataIndex: 'regionalManagerLeader', key: 'regionalManagerLeader'},
+      { title: '广联DVD销售数', width: 140, dataIndex: 'salesGlDvd', key: 'salesGlDvd'},
+      { title: '广联DVD完成率', width: 140, key: 'salesGlDvdRate', dataIndex: 'salesGlDvdRate'},
+      { title: '广联GPS销售数', width: 140, dataIndex: 'salesGlGps', key: 'salesGlGps' },
+      { title: '广联GPS完成率', width: 140, dataIndex: 'salesGlGpsRate', key: 'salesGlGpsRate' },
+      { title: '嘀嘀虎智能云镜销售数', width: 170, dataIndex: 'salesYunjing', key: 'salesYunjing' },
+      { title: '嘀嘀虎智能云镜完成率', width: 170, dataIndex: 'salesYunjingRate', key: 'salesYunjingRate' },
+      { title: '嘀嘀虎车联网服务激活卡-1年版销售数', width: 150, dataIndex: 'salesDidihuService', key: 'salesDidihuService' },
+      { title: '嘀嘀虎车联网服务激活卡-1年版完成率', width: 150, dataIndex: 'salesDidihuServiceRate', key: 'salesDidihuServiceRate' },
+      { title: '无线车充销售数', width: 120, dataIndex: 'salesWirelessCharge', key: 'salesWirelessCharge' },
+      { title: '无线车充完成率', width: 120, dataIndex: 'salesWirelessChargeRate', key: 'salesWirelessChargeRate' },
+      { title: '纯流媒体后视镜销售数', width: 120, dataIndex: 'salesRearview', key: 'salesRearview' },
+      { title: '纯流媒体后视镜完成率', width: 120, dataIndex: 'salesRearviewRate', key: 'salesRearviewRate' },
+      { title: '全功能_流媒体后视镜销售数', width: 120, dataIndex: 'salesFunctionRearview', key: 'salesFunctionRearview' },
+      { title: '全功能_流媒体后视镜完成率', width: 120, dataIndex: 'salesFunctionRearviewRate', key: 'salesFunctionRearviewRate' },
+    ];
+    const { MonthPicker} = DatePicker;
+    const monthFormat = 'YYYY-MM';
+    return (
+      <Card>
+        <Row>
+          <Col span={24}>
+            <TableCustom
+              columns={columns}
+              dataSource={historyTable.list}
+              total={historyTable.total}
+              scroll={{x: 2725,y: 450}}
+              onChange={this.onChange}
+              onShowSizeChange={this.onShowSizeChange}
+              onVisibleChange={this.onVisibleChange}
+              showSearch={historyTable.showSearch}
+              searchForm={
+                <FormCustom
+                  handleSubmit={this.handleSubmit}
+                  handleConfirmSubmit={this.handleConfirmSubmit}
+                />
+              }
+              searchRight={
+                <div>
+                  <MonthPicker defaultValue={moment('2018-11', monthFormat)} format={monthFormat} onChange={this.onChangeMonth} />
+                  <Button type="primary" icon="download" style={{ marginLeft: 8 }} onClick={this.exportByMonth}>导出数据</Button>
+                </div>
+              }
+            />
+          </Col>
+        </Row>
+      </Card>
+    );
+  }
+}
+
+export default HistoryTable
